@@ -3,8 +3,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
+const corsOptions = {
+  origin: "https://exptrackfront-7los3bj5z-adriendjiongos-projects.vercel.app", // replace with your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"], // adjust methods as necessary
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 // Middleware
-app.use(cors());
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB Connection

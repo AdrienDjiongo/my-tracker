@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "https://exptrackfront-7los3bj5z-adriendjiongos-projects.vercel.app", // replace with your frontend URL
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"], // adjust methods as necessary
   allowedHeaders: ["Content-Type", "Authorization"],
 };

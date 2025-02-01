@@ -61,8 +61,8 @@ const page = () => {
   useEffect(() => {
     fetch(
       dateFilter
-        ? `http://localhost:5000/top3Categories?${dateFilter}`
-        : `http://localhost:5000/top3Categories?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/top3Categories?${dateFilter}`
+        : `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/top3Categories?afterDate=${lm}&beforeDate=${nm}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -83,8 +83,8 @@ const page = () => {
     // Fetch the JSON file from the public folder
     fetch(
       dateFilter
-        ? `http://localhost:5000/Dashboard/filteredTransactions?${dateFilter}`
-        : `http://localhost:5000/Dashboard/filteredTransactions?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Dashboard/filteredTransactions?${dateFilter}`
+        : `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Dashboard/filteredTransactions?afterDate=${lm}&beforeDate=${nm}`
     ) // Fetch the JSON file from the public folder`)
       .then((response) => {
         if (!response.ok) {

@@ -14,7 +14,9 @@ const page = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/Categories")
+    fetch(
+      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories"
+    )
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error:", error));
@@ -39,13 +41,16 @@ const page = () => {
 
     formData.id = Math.random();
     formData.date = new Date().toLocaleDateString("fr-FR").substring(0, 10);
-    fetch("http://localhost:5000/Transactions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData), // No need to stringify for FormData
-    })
+    fetch(
+      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Transactions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // No need to stringify for FormData
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => (window.location.href = "/Transactions"))

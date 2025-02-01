@@ -23,23 +23,28 @@ const page = () => {
   const [catchange, setCatchange] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/Categories")
+    fetch(
+      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories"
+    )
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error:", error));
   }, [catchange]);
 
   const addNewInputCategory = () => {
-    fetch("http://localhost:5000/Categories", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: inputcategorie,
-        type: "income",
-      }),
-    })
+    fetch(
+      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: inputcategorie,
+          type: "income",
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => setCatchange(catchange + 1))
@@ -52,16 +57,19 @@ const page = () => {
   };
 
   const addNewOutputCategory = () => {
-    fetch("http://localhost:5000/Categories", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: outputcategorie,
-        type: "outcome",
-      }),
-    })
+    fetch(
+      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: outputcategorie,
+          type: "outcome",
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => setCatchange(catchange + 1))
@@ -75,12 +83,15 @@ const page = () => {
   };
 
   const deleteCategory = (id) => {
-    fetch(`http://localhost:5000/Categories/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => setCatchange(catchange + 1))

@@ -94,7 +94,7 @@ function page() {
     setTransactions([]);
     // Fetch the JSON file from the public folder
     fetch(
-      `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/filteredTransactions?${finalFilter}`
+      `https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/filteredTransactions?${finalFilter}`
     )
       .then((response) => {
         console.log("just fetched and final filter value is" + finalFilter);
@@ -113,7 +113,7 @@ function page() {
   useEffect(() => {
     // Fetch the JSON file from the public folder
     fetch(
-      `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Balance`
+      `https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Balance`
     )
       .then((response) => {
         if (!response.ok) {
@@ -127,7 +127,7 @@ function page() {
 
   useEffect(() => {
     // Fetch the JSON file from the public folder
-    fetch(`https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/InOut`)
+    fetch(`https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/InOut`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data.json");

@@ -15,7 +15,7 @@ const page = () => {
 
   useEffect(() => {
     fetch(
-      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Categories"
+      "https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Categories"
     )
       .then((response) => response.json())
       .then((data) => setCategories(data))
@@ -42,7 +42,7 @@ const page = () => {
     formData.id = Math.random();
     formData.date = new Date().toLocaleDateString("fr-FR").substring(0, 10);
     fetch(
-      "https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Transactions",
+      "https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Transactions",
       {
         method: "POST",
         headers: {

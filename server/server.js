@@ -13,6 +13,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+res.setHeader("Access-Control-Allow-Origin", "*");
+
 // MongoDB Connection
 mongoose
   .connect(

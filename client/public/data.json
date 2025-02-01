@@ -1,0 +1,92 @@
+{
+  "transactions": [
+    {
+      "id": 0,
+      "description": " vente kossam ",
+      "price": 2000,
+      "type": "income",
+      "category": "eating",
+      "date": "30/12/2024"
+    },
+    {
+      "id": 1,
+      "description": " bénéfice vente d'organe ",
+      "price": 12000,
+      "type": "income",
+      "category": "eating",
+      "date": "31/12/2024"
+    },
+    {
+      "id": 2,
+      "description": " achat shawarma ",
+      "price": 2800,
+      "type": "outcome",
+      "category": "eating",
+      "date": "30/12/2024"
+    },
+    {
+      "id": 3,
+      "description": " vente kossam ",
+      "price": 2000,
+      "type": "income",
+      "category": "eating",
+      "date": "30/12/2024"
+    },
+    {
+      "id": 4,
+      "description": " vente kossam",
+      "price": 500,
+      "type": "income",
+      "category": "eating",
+      "date": "30/12/2024"
+    },
+    {
+      "id": 5,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/12/2024"
+    },
+    {
+      "id": 6,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/12/2024"
+    },
+    {
+      "id": 7,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/11/2024"
+    },
+    {
+      "id": 8,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/11/2024"
+    },
+    {
+      "id": 9,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/11/2024"
+    },
+    {
+      "id": 10,
+      "description": " eru",
+      "price": 700,
+      "type": "outcome",
+      "category": "eating",
+      "date": "31/11/2024"
+    }
+  ]
+}

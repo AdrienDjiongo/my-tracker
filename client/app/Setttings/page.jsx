@@ -24,7 +24,7 @@ const page = () => {
 
   useEffect(() => {
     fetch(
-      "https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Categories"
+      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories"
     )
       .then((response) => response.json())
       .then((data) => setCategories(data))
@@ -33,7 +33,7 @@ const page = () => {
 
   const addNewInputCategory = () => {
     fetch(
-      "https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Categories",
+      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories",
       {
         method: "POST",
         headers: {
@@ -58,7 +58,7 @@ const page = () => {
 
   const addNewOutputCategory = () => {
     fetch(
-      "https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Categories",
+      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories",
       {
         method: "POST",
         headers: {
@@ -84,7 +84,7 @@ const page = () => {
 
   const deleteCategory = (id) => {
     fetch(
-      `https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Categories/${id}`,
+      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories/${id}`,
       {
         method: "DELETE",
         headers: {

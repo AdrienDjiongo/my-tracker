@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     // Fetch the JSON file from the public folder
     fetch(
-      `https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Transactions`
+      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Transactions`
     )
       .then((response) => {
         if (!response.ok) {
@@ -47,7 +47,7 @@ export default function Home() {
   useEffect(() => {
     // Fetch the JSON file from the public folder
     fetch(
-      `https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/Balance`
+      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Balance`
     )
       .then((response) => {
         if (!response.ok) {
@@ -61,7 +61,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch the JSON file from the public folder
-    fetch(`https://exptrack-jdtdpcx88-adriendjiongos-projects.vercel.app/InOut`)
+    fetch(`https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/InOut`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data.json");

@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     // Fetch the JSON file from the public folder
     fetch(
-      `https://exptrack-2ja3yr760-adriendjiongos-projects.vercel.app/Transactions`
+      `https://exptrack-bqsrnthag-adriendjiongos-projects.vercel.app/Transactions`
     )
       .then((response) => {
         if (!response.ok) {

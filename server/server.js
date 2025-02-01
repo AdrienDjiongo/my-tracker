@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
+res.setHeader("Access-Control-Allow-Origin", "*"); // or your frontend URL
+res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
 const corsOptions = {
   origin: "https://exptrackfront-7los3bj5z-adriendjiongos-projects.vercel.app", // replace with your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"], // adjust methods as necessary

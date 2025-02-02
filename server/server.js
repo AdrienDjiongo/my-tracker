@@ -239,8 +239,8 @@ app.get("/Balance", async (req, res) => {
 
 app.get("/InOut", async (req, res) => {
   const now = new Date();
-  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 4);
-  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 4);
+  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), -1);
+  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, -1);
 
   try {
     const IncomesOfThisMonth = await Transaction.aggregate([

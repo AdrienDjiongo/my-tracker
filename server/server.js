@@ -3,27 +3,17 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"], // adjust methods as necessary
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-// Middleware
+// ✅ Use CORS middleware before routes
+app.use(cors());
 
-app.use(cors(corsOptions));
-
-// Enable CORS for your frontend origin
+// ✅ If you want to set headers manually
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  // Optional: Allow specific HTTP methods (GET, POST, PUT, DELETE, etc.)
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+    "GET, POST, PUT, DELETE, OPTIONS"
   );
-  // Optional: Allow specific headers
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  // Optional: Allow credentials (cookies, authorization headers)
-  res.setHeader("Access-Control-Allow-Credentials", "true"); // Careful with this one!
   next();
 });
 

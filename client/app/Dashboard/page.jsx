@@ -1,16 +1,10 @@
 "use client";
-import Image from "next/image";
-import { ChevronsUp, ChevronsDown, CirclePlus } from "lucide-react";
 import { Montserrat } from "next/font/google";
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import CubicChart from "@/public/CubicChart";
-import BarChart from "@/public/Barchart";
-import Gpt from "@/public/gpt";
 import PieChartOutputs from "@/public/PieChartInputs";
 import PieChartInputs from "@/public/PieChartOutputs";
-import { Pie } from "react-chartjs-2";
 
 const montserrat = Montserrat({
   subsets: ["latin"], // Include the required subsets

@@ -28,9 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch the JSON file from the public folder
-    fetch(
-      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Transactions`
-    )
+    fetch(`https://strong-tranquility-production.up.railway.app/Transactions`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data.json");
@@ -46,9 +44,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch the JSON file from the public folder
-    fetch(
-      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Balance`
-    )
+    fetch(`https://strong-tranquility-production.up.railway.app/Balance`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data.json");
@@ -61,7 +57,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch the JSON file from the public folder
-    fetch(`https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/InOut`)
+    fetch(`https://strong-tranquility-production.up.railway.app/InOut`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data.json");

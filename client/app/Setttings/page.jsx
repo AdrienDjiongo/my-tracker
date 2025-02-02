@@ -23,28 +23,23 @@ const page = () => {
   const [catchange, setCatchange] = useState(0);
 
   useEffect(() => {
-    fetch(
-      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories"
-    )
+    fetch("https://strong-tranquility-production.up.railway.app/Categories")
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error:", error));
   }, [catchange]);
 
   const addNewInputCategory = () => {
-    fetch(
-      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: inputcategorie,
-          type: "income",
-        }),
-      }
-    )
+    fetch("https://strong-tranquility-production.up.railway.app/Categories", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: inputcategorie,
+        type: "income",
+      }),
+    })
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => setCatchange(catchange + 1))
@@ -57,19 +52,16 @@ const page = () => {
   };
 
   const addNewOutputCategory = () => {
-    fetch(
-      "https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: outputcategorie,
-          type: "outcome",
-        }),
-      }
-    )
+    fetch("https://strong-tranquility-production.up.railway.app/Categories", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: outputcategorie,
+        type: "outcome",
+      }),
+    })
       .then((response) => response.json())
       .then((data) => console.log("Response:", data))
       .then(() => setCatchange(catchange + 1))
@@ -84,7 +76,7 @@ const page = () => {
 
   const deleteCategory = (id) => {
     fetch(
-      `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Categories/${id}`,
+      `https://strong-tranquility-production.up.railway.app/Categories/${id}`,
       {
         method: "DELETE",
         headers: {

@@ -61,8 +61,8 @@ const page = () => {
   useEffect(() => {
     fetch(
       dateFilter
-        ? `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/top3Categories?${dateFilter}`
-        : `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/top3Categories?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://strong-tranquility-production.up.railway.app/top3Categories?${dateFilter}`
+        : `https://strong-tranquility-production.up.railway.app/top3Categories?afterDate=${lm}&beforeDate=${nm}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -83,8 +83,8 @@ const page = () => {
     // Fetch the JSON file from the public folder
     fetch(
       dateFilter
-        ? `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Dashboard/filteredTransactions?${dateFilter}`
-        : `https://exptrack-mzb1oeg0i-adriendjiongos-projects.vercel.app/Dashboard/filteredTransactions?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://strong-tranquility-production.up.railway.app/Dashboard/filteredTransactions?${dateFilter}`
+        : `https://strong-tranquility-production.up.railway.app/Dashboard/filteredTransactions?afterDate=${lm}&beforeDate=${nm}`
     ) // Fetch the JSON file from the public folder`)
       .then((response) => {
         if (!response.ok) {

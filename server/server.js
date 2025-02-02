@@ -11,6 +11,22 @@ const corsOptions = {
 // Middleware
 
 app.use(cors(corsOptions));
+
+// Enable CORS for your frontend origin
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  // Optional: Allow specific HTTP methods (GET, POST, PUT, DELETE, etc.)
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  // Optional: Allow specific headers
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  // Optional: Allow credentials (cookies, authorization headers)
+  res.setHeader("Access-Control-Allow-Credentials", "true"); // Careful with this one!
+  next();
+});
+
 app.use(express.json());
 
 res.setHeader("Access-Control-Allow-Origin", "*");

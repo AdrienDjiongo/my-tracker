@@ -27,8 +27,8 @@ function PieChartOutputs({ dateFilter }) {
   useEffect(() => {
     fetch(
       dateFilter
-        ? `http://localhost:5000/Dashboard/outcomes?${dateFilter}`
-        : `http://localhost:5000/Dashboard/outcomes?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://strong-tranquility-production.up.railway.app/Dashboard/outcomes?${dateFilter}`
+        : `https://strong-tranquility-production.up.railway.app/Dashboard/outcomes?afterDate=${lm}&beforeDate=${nm}`
     )
       .then((response) => {
         if (!response.ok) {

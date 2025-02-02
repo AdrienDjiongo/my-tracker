@@ -27,8 +27,8 @@ function PieChartInputs({ dateFilter }) {
   useEffect(() => {
     fetch(
       dateFilter
-        ? `http://localhost:5000/Dashboard/incomes?${dateFilter}`
-        : `http://localhost:5000/Dashboard/incomes?afterDate=${lm}&beforeDate=${nm}`
+        ? `https://strong-tranquility-production.up.railway.app/Dashboard/incomes?${dateFilter}`
+        : `https://strong-tranquility-production.up.railway.app/Dashboard/incomes?afterDate=${lm}&beforeDate=${nm}`
     )
       .then((response) => {
         if (!response.ok) {

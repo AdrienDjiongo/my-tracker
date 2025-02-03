@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+require("dotenv").config(); // Import environment variables from .env file
 
 // ✅ Use CORS middleware before routes
 app.use(cors());
@@ -10,9 +11,7 @@ app.use(express.json());
 
 // MongoDB Connection
 mongoose
-  .connect(
-    "mongodb+srv://adriendjiongo:SbrQU7WjGVmtc6JV@cluster0.msgjc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(process.env.DB_URL)
   .then(() => console.log("MongoDB connection successful!"))
   .catch((err) => console.error("MongoDB connection error:", err));
 

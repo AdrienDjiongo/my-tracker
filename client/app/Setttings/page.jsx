@@ -206,15 +206,7 @@ const page = () => {
             strokeWidth={1.5}
           />{" "}
         </Link>
-        <Link href="/Dashboard" className="hover:cursor-pointer">
-          {" "}
-          <ChartColumn
-            className=" border-white border-[2px] p-1  rounded-full "
-            color="white"
-            size={40}
-            strokeWidth={1.5}
-          />{" "}
-        </Link>
+
         <Link href="NewTransaction" className="hover:cursor-pointer">
           <CirclePlus
             className="bg-[#3ec3d5a8] mx-2 rounded-full "

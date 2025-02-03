@@ -71,7 +71,6 @@ const page = () => {
       });
 
     setOutputCategorie("");
-    setCatchange(catchange + 1);
   };
 
   const deleteCategory = (id) => {

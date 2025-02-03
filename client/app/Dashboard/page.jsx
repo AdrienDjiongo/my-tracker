@@ -263,7 +263,7 @@ const page = () => {
           />
           <div className="w-1/3  p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold text-center mb-2">
-              Top Categoriessss
+              Top Categories
             </h2>
 
             {top3Categories && top3Categories.length > 0 ? (

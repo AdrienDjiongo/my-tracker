@@ -28,11 +28,13 @@ function page() {
   const [incomeFilter, setIncomeFilter] = useState(false);
   const [outcomeFilter, setOutcomeFilter] = useState(false);
   const [typeFilter, setTypeFilter] = useState("");
+  const [search, setSearch] = useState("");
   const [selectedAfterDate, setSelectedAfterDate] = useState("");
   const [selectedBeforeDate, setSelectedBeforeDate] = useState("");
   const [dateFilter, setDateFilter] = useState("");
   const [afterDateFilter, setAfterDateFilter] = useState("");
   const [beforeDateFilter, setBeforeDateFilter] = useState("");
+  const [priceFilter, setPriceFilter] = useState("");
   const [finalFilter, setfinalFilter] = useState("");
   const [balance, setBalance] = useState("loading...");
   const [amounts, setAmounts] = useState(["loading...", "loading..."]);
@@ -54,6 +56,23 @@ function page() {
   };
   const ChangeOutcomeCheck = (event) => {
     setIsOutcomeChecked(event.target.checked); // Update the state based on checkbox status
+  };
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    setDateFilter(dateFilter + "&" + "search=" + search);
+  };
+  const handleMinPriceChange = (event) => {
+    setMinPrice(event.target.value);
+  };
+  const handleMaxPriceChange = (event) => {
+    setMaxPrice(event.target.value);
+  };
+  const handlePriceSubmit = (event) => {
+    event.preventDefault();
+    setPriceFilter("&minPrice=" + minPrice + "&" + "maxPrice=" + maxPrice);
   };
 
   console.log(new Date());
@@ -79,7 +98,7 @@ function page() {
     const DF = dateFilter ? dateFilter + "&" : " ";
     const TF = typeFilter ? typeFilter : "";
 
-    setfinalFilter(DF + TF);
+    setfinalFilter(DF + TF + priceFilter);
   }, [
     isIncomeChecked,
     isOutcomeChecked,
@@ -87,6 +106,7 @@ function page() {
     dateFilter,
     afterDateFilter,
     beforeDateFilter,
+    priceFilter,
   ]);
 
   useEffect(() => {
@@ -293,6 +313,19 @@ function page() {
               <p>Filter...</p>
               <Filter color="#3ec3d5" size={20} />
             </div>
+            <div className="flex gap-2 justify-around">
+              <input
+                className="border-zinc-200 border-[1px] rounded-md "
+                onChange={handleSearchChange}
+                value={search}
+              />
+              <button
+                className="bg-[#3ec3d5a8] text-white px-2 py-1 font-semibold rounded-lg"
+                onClick={handleSearchSubmit}
+              >
+                search
+              </button>
+            </div>
 
             <div className=" flex justify-around md:block ">
               <div>
@@ -344,21 +377,26 @@ function page() {
 
               <div>
                 <div className="text-zinc-500">
-                  <p className="mx-auto underline text-[#3ec3d5]">
-                    by categories
-                  </p>
-                  <div className="flex flex-col gap-1">
-                    <p>cat 1</p>
-                    <p>cat 2</p>
-                    <p>cat 3</p>
-                  </div>
-                </div>
-                <div className="text-zinc-500">
                   <p className="mx-auto underline text-[#3ec3d5]">by amount</p>
                   <div className="flex flex-col gap-1">
-                    <p>from:</p>
-                    <p>to:</p>
-                    <p>all</p>
+                    <p>from:</p>{" "}
+                    <input
+                      onChange={handleMinPriceChange}
+                      type="number"
+                      name="from"
+                    />
+                    <p>to:</p>{" "}
+                    <input
+                      onChange={handleMaxPriceChange}
+                      type="number"
+                      name="to"
+                    />
+                    <button
+                      className="bg-[#3ec3d5a8] text-white px-2 py-1 font-semibold rounded-lg"
+                      onClick={handlePriceSubmit}
+                    >
+                      apply
+                    </button>
                   </div>
                 </div>
               </div>

@@ -6,8 +6,7 @@ require("dotenv").config(); // Import environment variables from .env file
 
 // ✅ Use CORS middleware before routes
 app.use(cors());
-
-app.use(express.json());
+-app.use(express.json());
 
 // MongoDB Connection
 mongoose
@@ -288,7 +287,8 @@ app.get("/InOut", async (req, res) => {
 
 app.get("/filteredTransactions", async (req, res) => {
   try {
-    const { type, minPrice, maxPrice, afterDate, beforeDate } = req.query;
+    const { type, minPrice, maxPrice, afterDate, beforeDate, search } =
+      req.query;
     const query = {};
 
     // Date range filter
@@ -317,8 +317,11 @@ app.get("/filteredTransactions", async (req, res) => {
     if (type) query.type = type;
 
     // Price range filter
-    if (minPrice && maxPrice) {
+    if (minPrice || maxPrice) {
       query.price = { $gte: Number(minPrice), $lte: Number(maxPrice) };
+    }
+    if (search) {
+      query.description = { $regex: search, $options: "i" };
     }
 
     // Fetch and sort transactions

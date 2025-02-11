@@ -29,6 +29,8 @@ function page() {
   const [outcomeFilter, setOutcomeFilter] = useState(false);
   const [typeFilter, setTypeFilter] = useState("");
   const [search, setSearch] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [selectedAfterDate, setSelectedAfterDate] = useState("");
   const [selectedBeforeDate, setSelectedBeforeDate] = useState("");
   const [dateFilter, setDateFilter] = useState("");

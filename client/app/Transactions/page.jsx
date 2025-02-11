@@ -32,6 +32,7 @@ function page() {
   const [selectedAfterDate, setSelectedAfterDate] = useState("");
   const [selectedBeforeDate, setSelectedBeforeDate] = useState("");
   const [dateFilter, setDateFilter] = useState("");
+  const [searchfilter, setSearchfilter] = useState("");
   const [afterDateFilter, setAfterDateFilter] = useState("");
   const [beforeDateFilter, setBeforeDateFilter] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
@@ -62,7 +63,7 @@ function page() {
   };
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    setDateFilter(dateFilter + "&" + "search=" + search);
+    setSearchfilter("&search=" + search);
   };
   const handleMinPriceChange = (event) => {
     setMinPrice(event.target.value);
@@ -98,7 +99,7 @@ function page() {
     const DF = dateFilter ? dateFilter + "&" : " ";
     const TF = typeFilter ? typeFilter : "";
 
-    setfinalFilter(DF + TF + priceFilter);
+    setfinalFilter(DF + TF + priceFilter + searchfilter);
   }, [
     isIncomeChecked,
     isOutcomeChecked,
@@ -107,6 +108,7 @@ function page() {
     afterDateFilter,
     beforeDateFilter,
     priceFilter,
+    searchfilter,
   ]);
 
   useEffect(() => {
